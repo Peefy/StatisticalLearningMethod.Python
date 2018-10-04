@@ -1,7 +1,7 @@
 
 class _Symbol:
     """
-    符号表
+    统计方法 符号表
     """
     def __init__(self):
         pass
@@ -49,17 +49,43 @@ class _Symbol:
         return d
 
 class Chapter1:
+    """
+    第1章 统计学习方法概论
+    """
     def __init__(self):
+        """
+        第1章 统计学习方法概论
+        """
         pass
 
     def note(self):
-        print('第1章 ')
+        """
+        chapter1 note
+        """
+        print('第1章 统计学习方法概论')
+        # !统计学习方法三要素:模型,策略和算法
+        print('统计学习方法三要素:模型,策略和算法')
+        print('模型选择,包括正则化,交叉验证,学习的泛化能力;')
+        print('生成模型和判别模型')
+        print('监督学习方法的应用:分类问题,标注问题,回归问题')
+        print('1.1 统计学习')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
 
-_sym = _Symbol()
+_symbols = _Symbol().symbol_dict
 chapter1 = Chapter1()
 
 def main():
-    print(_sym.symbol_dict)
+    print(_symbols)
     chapter1.note()
 
 if __name__ == '__main__':
