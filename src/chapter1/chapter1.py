@@ -315,6 +315,18 @@ class Chapter1:
         print('  R(f)<=R‘(f)+e(c,N,d)  其中e(c,N,d)=sqrt(1/2N(logc+log(1/d)))')
         print('不等式左端R(f)是泛化误差,右端即为泛化误差上界.在泛化误差上界中,第1项是训练误差,训练误差越小,泛化误差也越小.',
             '第2项e(c,N,d)是N的单调递减函数,当N趋于无穷时趋于0;同时它也是sqrt(logd)阶的函数,假设空间F包含的函数越多,其值越大')
+        print('Hoeffding不等式')
+        print('设Sn=∑Xi是独立随机变量X1,X2,...,Xn之和,Xi∈[ai,bi],则对任意t>0,一下不等式成立:')
+        print('  P(Sn-ESn>=t)<=exp(-2t^2/∑(bi-ai)^2)  ')
+        print('  P(ESn-Sn>=t)<=exp(-2t^2/∑(bi-ai)^2)  ')
+        print('对任意函数f∈F,R‘(f)是N个独立的随机变量L(Y,f(X))的样本均值,R(f)是随机变量L(Y,f(X))的期望值.如果损失函数取值于区间[0,1],',
+            '即对所有i,[ai,bi]=[0,1],那么由Hoeffding不等式一步一步推理可得定理1.1')
+        print('就是说,训练误差小的模型,其泛化误差也会小.')
+        print('1.7 生成模型与判别模型')
+        print('监督学习的任务就是学习一个模型,应用这一模型,对给定的输入预测相应的输出.这个模型的一般形式为决策函数Y=f(X)或者为条件概率分布P(Y|X)')
+        print('监督学习方法又可以分为生成方法(generative approach)和判别方法(discriminative approach).',
+            '所学到的模型分别为生成模型和判别模型')
+        print('生成方法由数据学习联合概率分布P(X,Y),然后求出条件概率分布P(Y|X)作为预测的模型,即生成模型P(Y|X)=P(X,Y)/P(X)')
         print('')
         print('')
         print('')
@@ -326,7 +338,17 @@ class Chapter1:
         print('')
         print('')
         print('')
-
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
 
 _symbols = _Symbol().symbol_dict
 chapter1 = Chapter1()
