@@ -1,15 +1,24 @@
 
-class Chapter1:
+class Chapter2:
+    """
+    第2章 感知机
+    """
     def __init__(self):
+        """
+        第2章 感知机
+        """
         pass
 
     def note(self):
-        print('第1章 ')
+        """
+        chapter2 note
+        """
+        print('第2章 感知机')
 
-chapter1 = Chapter1()
+chapter2 = Chapter2()
 
 def main():
-    chapter1.note()
+    chapter2.note()
 
 if __name__ == '__main__':
     main()
