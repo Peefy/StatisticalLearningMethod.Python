@@ -348,9 +348,19 @@ class Chapter1:
         print('对于二类分类问题常用的评价指标是精确率(precision)与召回率(recall).通常以关注的类为正类,',
             '其他类为负类,分类器在测试数据集上的预测或正确或不正确,4种情况出现的总数分别记做')
         print('  TP 将正类预测为正类数;')
-        print('  FN 将正类预测为负整数')
-        print('  FP 将负类预测为正类数')
-        print('  TN 将负类预测为负类数')
+        print('  FN 将正类预测为负整数;')
+        print('  FP 将负类预测为正类数;')
+        print('  TN 将负类预测为负类数;')
+        print('精确率定义为P=TP/(TP+FP)')
+        print('召回率定义为R=TP/(TP+FN)')
+        print('F1值是精确率和召回率的调和均值2/F1=1/P+1/R,F1=2TP/(2TP+FP+FN)')
+        print('精确率和召回率都高时，F1值也会高')
+        print('许多统计学习方法可以用于分类,包括k近邻算法、感知机、朴素贝叶斯法、决策树、',
+            '决策列表、Logistic回归、支持向量机、提升方法、贝叶斯网络、神经网络、Winnow等')
+        print('如文本分类,输入是文本的特征向量,输出是文本的类别.通常把文本中的单词定义为特征,每个单词对应一个特征.',
+            '单词的特征可以是二值的,如果单词在文本中出现则取1,否则是0;也可以是多值的,表示单词在文本中出现的频率',
+            '直观地,如果“股票”,“银行”,“货币”这些词出现很多,这个文本可能属于经济类,',
+            '如果“网球”,“比赛”,“运动员”这些词频繁出现,这个可能是体育类')
         print('')
         print('')
         print('')
@@ -358,6 +368,22 @@ class Chapter1:
         print('')
         print('')
         print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+
 
 _symbols = _Symbol().symbol_dict
 chapter1 = Chapter1()
