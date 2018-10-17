@@ -1,15 +1,37 @@
 
-class Chapter1:
+class Chapter3:
+    """
+    第3章 k近邻法
+    """
     def __init__(self):
+        """
+        第3章 k近邻法
+        """
         pass
 
     def note(self):
-        print('第1章 ')
+        """
+        chapter3 note
+        """
+        print('第3章 k近邻法')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
 
-chapter1 = Chapter1()
+chapter3 = Chapter3()
 
 def main():
-    chapter1.note()
+    chapter3.note()
 
 if __name__ == '__main__':
     main()
