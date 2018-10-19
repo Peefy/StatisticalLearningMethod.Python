@@ -32,6 +32,9 @@ class Perception:
     def run(self, x):
         return [self.perception_func(self.w0, xx, self.b0) for xx in x] 
 
+class SKLearnPerception:
+    pass
+
 def main():
     p = Perception()
     x = _np.array([0, 1, 2, 3])
