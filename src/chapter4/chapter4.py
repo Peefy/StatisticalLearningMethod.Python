@@ -44,7 +44,29 @@ class Chapter4:
         print('这样,根据期望风险最小化准则就得到了后验概率最大化准则:f(x)=argmaxP(ck|X=x),',
             '即朴素贝叶斯法所采用的原理')
         print('4.2 朴素贝叶斯法的参数估计')
-        print('')
+        print('4.2.1 极大似然估计')
+        print('在朴素贝叶斯法中,学习意味着估计P(Y=ck)和P(X(j)=x(j)|Y=ck).',
+            '可以应用极大似然估计相应的概率.先验概率P(Y=ck)的极大似然估计是:',
+            '   P(Y=ck)=∑I(yi=ck)/N,k=1,2,...,K')
+        print('设第j个特征x(j)可能取值的集合为{aj1,aj2,...,ajSj},条件概率P(X(j)==ajl|Y=ck)',
+            '的极大似然估计是',
+            '   P(X(j)=ajl|Y=ck)=∑I(xi(l)=aji,yi=ck)/∑I(yi=ck),j=1,2,...,n;l=1,2,...,Sj;k=1,2,...,K')
+        print('4.2.2 学习与分类算法')
+        print('算法4.1 朴素贝叶斯算法(native Bayes algotithm).')
+        print('输入:训练数据T={(x1,y1),(x2,y2),...,(xN,yN)},其中xi=(xi(1),xi(2),...,xi(n))^T,',
+            'xi(j)是第i个样本的第j个特征,xi(j)∈{aj1,aj2,...,ajSj},ajl是第j个特征可能取的第l个值,',
+            'j=1,2,...,n,l=1,2,...,Sj,yi∈{c1,c2,...,cK};实例x;')
+        print('输出:实例x的分类')
+        print('(1) 计算先验概率及条件概率')
+        print('  P(Y=ck)=∑I(yi=ck)/N')
+        print('  P(X(j)=ajl|Y=ck)=∑I(xi(l)=aji,yi=ck)/∑I(yi=ck)')
+        print('  j=1,2,...,n; l=1,2,...,Sj;k=1,2,...,K')
+        print('(2) 对于给定的实例x=(x(1),x(2),...,x(n))^T,计算')
+        print('  P(Y=ck)∏P(X(j)=x(j)|Y=ck), k=1,2,...,K')
+        print('(3) 确定实例x的类')
+        print('  y=argmaxP(Y=ck)∏P(X(j)=x(j)|Y=ck)')
+        print('例4.1 试由表4.1的训练数据学习一个朴素贝叶斯分类器并确定x=(2,S)^T的类标记',
+            '表中X(1),X(2)为特征')
         print('')
         print('')
         print('')
