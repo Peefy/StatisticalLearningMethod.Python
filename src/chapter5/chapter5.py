@@ -1,15 +1,36 @@
 
-class Chapter1:
+class Chapter5:
+    """
+    第5章 决策树
+    """
     def __init__(self):
+        """
+        第5章 决策树模型与学习
+        """
         pass
 
     def note(self):
-        print('第1章 ')
+        """
+        chapter5 note
+        """
+        print('第5章 决策树模型')
+        print('5.1 决策树模型与学习')
+        print('5.1.1 决策树模型')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
 
-chapter1 = Chapter1()
+chapter5 = Chapter5()
 
 def main():
-    chapter1.note()
+    chapter5.note()
 
 if __name__ == '__main__':
     main()
