@@ -1,15 +1,25 @@
 
-class Chapter1:
+class Chapter6:
+    """
+    第6章 逻辑斯谛回归与最大熵模型
+    """
     def __init__(self):
+        """
+        第6章 逻辑斯谛回归与最大熵模型
+        """
         pass
 
     def note(self):
-        print('第1章 ')
-
-chapter1 = Chapter1()
+        """
+        chapter6 note
+        """
+        print('第6章 逻辑斯谛回归与最大熵模型')
+        print('')
+        print('')
+        print('')
 
 def main():
-    chapter1.note()
+    chapter6.note()
 
 if __name__ == '__main__':
     main()
