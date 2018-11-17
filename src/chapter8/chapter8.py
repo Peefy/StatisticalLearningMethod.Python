@@ -108,20 +108,28 @@ class Chapter8:
         print('  表明AdaBoost的训练误差是以指数速率下降的.')
         print('注意:AdaBoost算法不需要知道下界y.与一些早期的提升方法不同,AdaBoost具有适应性,',
             '即它能适应弱分类器各自的训练误差率.Ada是Adaptive(适应)的简写.')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('8.3 AdaBoost算法的解释')
+        print('AdaBoost算法还有另一解释,即可以认为AdaBoost算法是模型为加法模型、损失函数为指数函数、',
+            '学习算法为前向分步算法时的二类分类学习方法.')
+        print('8.3.1 前向分布算法')
+        print('考虑加法模型:f(x)=∑bmb(x;ym).其中,b(x;ym)为基函数,bm为基函数的系数.',
+            '显然式(8,6)是一个加法模型.')
+        print('在给定训练数据及损失函数L(y,f(x))的条件下,学习加法模型f(x)成为经验风险极小化即损失函数极小化问题：',
+            'min ∑L(yi,∑bmb(xi;ym))')
+        print('通常这是一个复杂的优化问题.前向分布算法(forward stagewise algorithm)求解',
+            '这一优化问题的想法是:因为学习的是加法模型,如果能够从前向后,每一步只学习一个基函数及其系数,',
+            '逐步逼近优化目标函数式,那么就可以简化优化的复杂度.具体地,每步只需优化的复杂度.',
+            '具体地,每步只需优化如下损失函数:min∑L(yi,bb(xi;y))')
+        print('给定训练数据集T={(x1,y1),(x2,y2),...,(xn,yn)},xi∈X∈R^n,',
+            'yi∈Y={-1,+1}.损失函数L(y,f(x));基函数集{b(x;y)};')
+        print('输出：加法模型f(x).')
+        print('(1) 初始化f0(x)=0')
+        print('(2) 对m=1,2,...,M')
+        print('  (a) 极小化损失函数(bm,ym)=argmin∑L(yi,f(m-1)(xi)+bb(xi;y))','
+            '得到参数bm,ym)
+        print('  (b) 更新fm(x)=f(m-1)(x)+bmb(x;ym)')
+        print('(3) 得到加法模型:f(x)=fM(x)=∑bmb(x;ym)')
+        print('这样,前向分布算法将同时求解从m=1到M所有参数bm,ym的优化问题.')
         print('')
         print('')
         print('')
