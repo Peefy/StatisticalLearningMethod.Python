@@ -213,15 +213,19 @@ class Chapter8:
         print('f6(x)=f5(x)+T6(x)=T1(x)+...+T5(x)+T6(x)')
         print('用f6(x)拟合训练数据的平方损失误差是L(y,f6(x))=∑(yi-f6(xi))^2=0.17')
         print('假设此时已满足误差要求,那么f(x)=f6(x)即为所求提升树')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('8.4.3 梯度提升')
+        print('提升树利用加法模型与前向分布算法实现学习的优化过程.当损失函数是平方损失和指数损失函数时,',
+            '每一步优化都是很简单的.但对一般损失函数而言,往往每一步优化并不是那么容易.',
+            'Freidman提出了梯度提升算法.是利用最速下降法的近似方法,',
+            '其关键是利用损失函数的负梯度在当前模型的值-[dL(y,f(xi))/df(xi)]f(x)=fm-1(x)')
+        print('作为回归问题提升树算法中的残差的近似值,拟合一个回归树')
+        print('算法8.4(梯度提升算法)')
+        print('输入:训练数据集T={(x1,y1),(x2,y2),...,(xn,yn)},xi∈X∈R^n,yi∈Y∈R^n;',
+            '损失函数L(y,f(x))')
+        print('输出:回归树f(x)')
+        print('(1) 初始化 f0(x)=argmin ∑L(yi,c)')
+        print('(2) 对m=1,2,...,M')
+        print('  (a) 对i=1,2,...,N,计算rmi=-[dL(y,f(xi))/df(xi)]f(x)=fm-1(x)')
         print('')
         print('')
         print('')
