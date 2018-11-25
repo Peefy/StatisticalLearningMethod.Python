@@ -11,7 +11,7 @@ class Chapter9:
 
     def note(self):
         """
-        chapter8 note
+        chapter9 note
         """
         print('第9章 EM算法及其推广')
         print('EM算法是一种迭代算法,1977年由Dempster等人总结提出,',
