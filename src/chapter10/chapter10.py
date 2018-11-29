@@ -189,6 +189,46 @@ class Chapter10:
         print('3.初始状态概率pi的估计pi为S个样本中初始状态为qi的频率')
         # !由于监督学习需要使用训练数据,而人工标注训练数据往往代价很高,有时就会利用非监督学习的方法
         print('由于监督学习需要使用训练数据,而人工标注训练数据往往代价很高,有时就会利用非监督学习的方法')
+        print('10.3.2 Baum-Welch算法')
+        print('假设给定训练数据只包含S个长度为T的观测序列{O1,O2,...,Os}而没有对应的状态序列,',
+            '目标是学习隐马尔可夫模型l=(A,B,pi)的参数.将观测序列数据看作观测数据O,状态序列看作不可观测的隐数据I,',
+            '那么隐马尔可夫模型事实上是一个含有隐变量的概率模型',
+            'P(O|l)=∑P(O|I,l)P(I|l)它的参数学习可以由EM算法实现.')
+        print('1.确定完全数据的对数似然函数')
+        print('所有观测数据写成O=(o1,o2,...,oT),所有隐数据写成I=(i1,i2,...,iT),完全数据是',
+            '(O,I)=(o1,o2,...,oT,i1,i2,...,iT).完全数据的对数似然函数是logP(O,I|l).')
+        print('2.EM算法的E步:求Q函数Q(l,lbar):Q(l,lbar)=∑logP(O,I|l)P(O,I|lbar)')
+        print('其中,lbar是HMM参数的当前估计值,l是要极大化的HMM模型参数')
+        print('  P(O,I|l)=pi1bi1(o1)ai1ai2bi2(o2)...aiT-1biT(oT)')
+        print('于是函数Q(l,lbar)可以写成:Q(l,lbar)=∑logpi1P(O,I|lbar)+',
+            '∑(∑logai,i+1)P(O,I|l)+∑(∑logbit(ot))P(O,I|lbar)')
+        print('式中求和都是对所有训练数据的序列总长度T进行的.')
+        print('3.EM算法的M步,极大化Q函数Q(l,lbar)求模型参数A,B,pi')
+        print('由于要极大化的参数在式中单独地出现在3个项中,所以只需对各个项分别极大化.')
+        print('(1) 式的第1项可以写成:∑logpi0P(O,I|lbar)=∑logpiP(O,i1=i|lbar)')
+        print('注意到pi满足约束条件∑pi=1,利用拉格朗日乘子法,写出拉格朗日函数:',
+            '∑logpiP(O,i1=i|lbar)+y(∑pi-1)')
+        print('对其求偏导数并令结果为0得:P(O,i1=i|lbar)+ypi=0,对i求和得到y=-P(O|lbar)',
+            '然后得到pi=P(O,i1=i|lbar)/P(O|lbar)')
+        print('(2) 类似第1项,第2项可以应用具有约束条件∑aij=1的拉格朗日乘子法可以求出aij')
+        print('(3) 式的第3项为,同样用拉格朗日乘子法,约束条件是∑bj(k)=1.注意,只有在ot=vk时bj(ot)',
+            '对bj(k)的偏导数才不为0,以I(ot=vk)表示.求得bj(k)')
+        print('10.3.3 Baum-Welch模型参数估计公式')
+        print('将上式中的各概率分别用yt(i),ft(i,j)表示,则可将相应的公式写成：',
+            'aij=∑ft(i,j)/∑yt(i), bj(k)=∑yt(j)/=∑yt(j), pi=y1(i)')
+        print('是EM算法在HMM学习中的具体实现,由Baum和Welch提出.')
+        print('算法10.4 (Baum-Welch算法)')
+        print('输入:观测数据O=(o1,o2,...,oT)')
+        print('输出:HMM模型参数')
+        print('(1) 初始化')
+        print('  对n=0,选取aij(0),bj(k)(0),pi(0),得到模型l(0),(A(0),B(0),pi(0))')
+        print('(2) 递推.对n=1,2,...,')
+        print('  aij(n+1)=∑ft(i,j)/∑yt(i)')
+        print('  bj(k)(n+1)=∑yt(j)/∑yt(j)')
+        print('  pi(n+1)=y1(i)')
+        print('右端各值按观测O=(o1,o2,...,oT)和模型l(n)=(A(n),B(n),pi(n))计算.',
+            '式中yt(i),ft(i,j)')
+        print('(3) 终止.得到模型参数l(n+1)=(A(n+1),B(n+1),pi(n+1))')
         print('')
         print('')
         print('')
@@ -213,7 +253,10 @@ class Chapter10:
         print('')
         print('')
         print('')
-  
+        print('')
+        print('')
+        print('')
+
 chapter10 = Chapter10()
 
 def main():
