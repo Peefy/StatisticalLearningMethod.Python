@@ -13,6 +13,7 @@ class Chapter10:
         """
         chapter10 note
         """
+        print('第10章 隐马尔可夫模型的基本概念')
         print('隐马尔可夫模型(Hidden Markov Model, HMM)是可用于标注问题的统计学习模型,',
             '描述由隐藏的马尔可夫链随机生成观测序列的过程，属于生成模型.',
             '本章介绍隐马尔可夫模型基本概念,概率计算算法、学习算法、预测算法.',
@@ -302,13 +303,6 @@ class Chapter10:
         print('4.预测问题.已知模型l=(A,B,pi)和观测序列O=(o1,o2,...,oT),',
             '求对给定观测序列条件概率P(I|O)最大的状态序列I=(i1,i2,...,iT).',
             '维特比算法应用动态规划高效地求解最优路径,即概率最大的状态序列.')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
 
 chapter10 = Chapter10()
 

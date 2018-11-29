@@ -20,6 +20,8 @@
 
 * [Chapter10 隐马尔可夫模型的基本概念](https://github.com/Peefy/StatisticalLearningMethod.Python/tree/master/src/chapter10)
 
+* [Chapter11 条件随机场](https://github.com/Peefy/StatisticalLearningMethod.Python/tree/master/src/chapter11)
+
 ## Requirement
 
 * *Python3.5+ Sdk*
