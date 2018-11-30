@@ -113,19 +113,26 @@ class Chapter11:
         print('对给定的观测序列x,标记序列y=(1,2,2)的非规范化条件概率为：',
             'P(yi=1,y2=2,y3=2|x)∝exp(3.2)')
         print('11.2.3 条件随机场的简化形式')
-        print('条件随机场还可以')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('条件随机场还可以由简化形式表示.注意到条件随机场中同一特征',
+            '在各个位置都有定义,可以对同一个特征在各个位置求和,将局部特征函数转换为一个全局特征函数,',
+            '这样就可以将条件随机场写成权值向量和特征向量的内积形式,',
+            '条件随机场的简化形式.')
+        print('为简便起见,首先将转移特征和状态特征及其权值用同一的符号表示.',
+            '设有K1个转移特征,K2个转移特征,K=K1+K2,记')
+        print('  fk(yi,yi,x,i)=tk(yi-1,yi,x,i), k=1,2,...,K1;  ')
+        print('  fk(yi,yi,x,i)=sl(yi,x,i), k=K1+l; l=1,2,...,K2')
+        print('然后,对转移与状态特征在各个位置i求和,记作',
+            'fk(y,x)=∑fk(yi-1,yi,x,i), k=1,2,...,K')
+        print('用wk表示特征fk(y,x)的权值,即')
+        print('  wk=lk, k=1,2,...,K1;  wk=ul, k=K1+l; l=1,2,...,K2')
+        print('于是条件随机场可表示为：')
+        print('  P(y|x)=1/Z(x)exp∑wkfk(y,x)')
+        print('  Z(x)=∑exp∑wkfk(y,x)')
+        print('若以w表示权值向量,即w=(w1,w2,...,wK)^T,以F(y,x)表示全局特征向量,即:',
+            'F(y,x)=(f1(y,x),f2(y,x),...,fK(y,x))^T')
+        print('则条件随机场可以写成向量w与F(y,x)的内积形式:',
+            '其中Pw(y|x)=exp(w·F(y,x)/Zw(x))')
+        print('其中,Zw(x)=∑exp(w·F(y,x))')
         print('')
         print('')
         print('')
