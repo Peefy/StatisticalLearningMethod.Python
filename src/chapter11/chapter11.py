@@ -133,6 +133,55 @@ class Chapter11:
         print('则条件随机场可以写成向量w与F(y,x)的内积形式:',
             '其中Pw(y|x)=exp(w·F(y,x)/Zw(x))')
         print('其中,Zw(x)=∑exp(w·F(y,x))')
+        print('11.2.4 条件随机场的矩阵形式')
+        print('条件随机场还可以由矩阵表示.假设Pw(y|x)是由式给的线性链条件随机场,表示对给定观测序列x,',
+            '相应的标记序列y的条件概率.引进特殊的起点和终点状态标记y0=start,yn+1=stop,',
+            '这时Pw(y|x)可以通过矩形形式表示.')
+        print('对观测序列x的每一个位置i=1,2,...,n+1,定义一个m阶矩阵(m是标记yi取值的个数)')
+        print('Mi(x)=[Mi(yi-1,yi|x)] Mi(yi-1,yi|x)=exp(Wi(yi,yi|x)) Wi(yi-1,yi|x)=∑wkfk(yi-1,yi,x,i)')
+        print('这样,给定观测序列x,标记序列y的非规范化概率可以通过n+1个矩阵的乘积∏Mi(yi-1,yi|x)表示,',
+            '于是,条件概率Pw(y|x)是 P(y|x)=1/Z(x)∏Mi(yi-1,yi|x)')
+        print('其中,Zw(x)为规范化因子,是n+1个矩阵的乘积的(start,stop)元素.')
+        print('Zw(x)=(M1(x)M2(x)...Mn+1(x))start,stop')
+        print('注意,y0=start与yn+1=stop表示开始状态与终止状态,规范化因子Zw(x)是以start为起点stop为终点',
+            '通过状态的所有路径y1y2,...,yn的非规范化概率∏Mi(yi-1,yi|x)之和.')
+        print('例11.2 给定一个由图11.6所示的线性链条件随机场,观测序列x,状态序列y,i=1,2,3,n=3,',
+            '标记yi∈{1,2},假设y0=start=1,y4=stop=1,各个位置的随机矩阵M1(x),M2(x),M3(x),M4(x)分别是',
+            'M1(x)=[[a01,a02],[0,0]] M1(x)=[[b11,b12],[b21,b22]] M1(x)=[[c11,c12],[c21,c22]] M1(x)=[[1,0],[1,0]]')
+        print('试求状态序列y以start为起点stop为终点所有路径的非规范化概率及规范化因子')
+        print('解：首先计算图11.6中从start到stop对应于y=(1,1,1),y=(1,1,2),...,y=(2,2,2)各路径的非规范化概率分别是:',
+            'a01b11c11, a01b11c12, a01b12c21, a01b12c22',
+            'a02b21c11, a02b21c12, a02b22c21, a02b22c22')
+        print('然后按式求规范化因子. 通过计算矩阵乘积M1(x)M2(x)M3(x)M4(x)可知,其第1行第1列的元素为:',
+            'a01b11c11+a02b21c11+a01b12c21+a02b22c22+a02b21c11+a02b21c12+a02b22c21+a02b22c22')
+        print('恰好等于从start到stop的所有路径的非规范化概率之和,即规范化因子Z(x)')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
         print('')
         print('')
         print('')
