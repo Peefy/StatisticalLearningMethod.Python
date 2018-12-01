@@ -192,7 +192,59 @@ class Chapter11:
         print('条件随机场的学习问题,条件随机场模型实际上是定义在时序数据上的对数线性模型,',
             '其学习方法包括极大似然估计和正则化的极大似然估计.',
             '具体的优化实现算法有改进尺度法IIS,梯度下降法以及拟牛顿法')
-        print('11.4.1 ')
+        print('11.4.1 改进的迭代尺度法')
+        print('已知训练数据集,由此可知经验概率分布P(X,Y).可以通过极大化训练数据的对数似然函数来求模型参数.',
+            '训练数据的对数似然函数为',
+            'L(w)=Lp(Pw)=log∏Pw(y|x)^P(x,y)=∑P(x,y)logPw(y|x)')
+        print('当Pw是一个由式给出的条件随机场模型时,对数似然函数为:',
+            'L(w)=∑P(x,y)logPw(y|x)=∑∑wkfk(yj,xj)-∑logZw(xj)')
+        print('改进的迭代尺度法通过迭代的方法不断优化对数似然函数改变量的下界,',
+            '达到极大化对数似然函数的目的.假设模型的当前参数向量为w=(w1,w2,...,wK)^T,',
+            '向量的增量为d=(d1,d2,...,dK)^T,更新参数向量为w+d=(w1+d1,w2+d2,...,wK+dK)^T')
+        print('关于转移特征tk的更新方程为：Ep[tk]=∑P(x,y)∑tk(yi-1,yi,x,i), k=1,2,...,K1')
+        print('关于状态特征sl的更新方程为：Ep[sl]=∑P(x,y)∑sl(yi,x,i), l=1,2,...,K2')
+        print('这里,T(x,y)是在数据(x,y)中出现所有特征数的总和:',
+            'T(x,y)=∑fk(y,x)=∑∑fk(yi-1,yi,x,i)')
+        print('算法11.1 (条件随机场模型学习的改进的迭代尺度法)')
+        print('输入:特征函数t1,t2,...,tK1,s1,s2,...,sK2;经验分布P(x,y);')
+        print('输出:参数估计值w;模型Pw')
+        print('(1) 对所有k∈{1,2,...,K},取初值wk=0')
+        print('(2) 对每一k∈{1,2,...,K};')
+        print('(a) 当k=1,2,...,K1时,令dk是方程∑P(x)P(y|x)∑tk(yi-1,yi,x,i)exp(dkT(x,y))=Ep[tk]的解')
+        print('当k=K1+l,l=1,2,...,K2时,令dK1+i是方程∑P(x)P(y|x)∑sl(yi,x,i)exp(dK1+lT(x,y))=Ep[sl]的解')
+        print('(b) 更新wk值:wk<-wk+dk')
+        print('(3) 如果不是所有wk都收敛,重复步骤(2)')
+        print('在式中,T(x,y)表示数据(x,y)中的特征总数,对不同的数据(x,y)取值可能不同,',
+            '为了处理这个问题,定义松弛特征:s(x,y)=S-∑∑fk(yi-1,yi,x,i)')
+        print('式中S是一个常数.选择足够大的常数S使得对训练数据集的所有数据(x,y),s(x,y)>=0成立,',
+            '这时特征总数可取S.')
+        print('对于转移特征tk,dk的更新方程是：∑P(x)P(y|x)∑tk(yi-1,yi,x,i)exp(dkS)=Ep[tk]',
+            'dk=1/SlogEp[tk]/Ep[tk].')
+        print('其中,Ep(tk)=∑P(x)∑∑tk(yi-1,yi,x,i)ai-1^T(yi-1|x)Mi(yi-1,yi|x)bi(yi|x)/Z(x)')
+        print('同样由式,对于状态特征sl,dk的更新方程是:',
+            '∑P(x)P(y|x)∑sl(yi,x,i)exp(dK1+lS)=Ep[sl]',
+            'dK1+lS=1/SlogEp[sl]/Ep[sl]')
+        print('其中,Ep(sl)=∑P(x)∑∑sl(yi,x,i)ai^T(yi|x)bi(yi|x)/Z(x)')
+        print('以上算法称为算法S.在算法S中需要使得常数S取足够大,这样一来,',
+            '每步迭代增量向量会变大,算法收敛会变慢.算法T试图解决这个问题.',
+            '算法T对每个观测序列x计算其特征总数最大值T(x):T(x)=maxT(x,y)')
+        print('利用前向-后向递推公式,可以很容易地计算T(x)=t.')
+        print('这时,关于转移特征参数的更新方程可以写成:',
+            'Ep[tk]=∑P(x)P(y|x)∑tk(yi-1,yi,x,i)exp(dkT(x))=∑ak,tbk')
+        print('这里,ak,t是特征tk的期待值,dk=logbk.bk是多项式方程唯一的实根,',
+            '可以用牛顿法求得,从而求得相关的dk.')
+        print('同样,关于状态特征的参数更新方程可以写成:')
+        print('Ep[sl]=∑P(x)P(y|x)∑sl(yi,x,i)exp(dk1+lT(x))=∑bl,yl')
+        print('这里,bl,t是特征sl的期望值,dl=logyl,yl是多项式方程唯一的实根,也可以用牛顿法求得.')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
         print('')
         print('')
         print('')
