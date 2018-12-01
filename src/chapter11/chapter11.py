@@ -155,20 +155,26 @@ class Chapter11:
         print('然后按式求规范化因子. 通过计算矩阵乘积M1(x)M2(x)M3(x)M4(x)可知,其第1行第1列的元素为:',
             'a01b11c11+a02b21c11+a01b12c21+a02b22c22+a02b21c11+a02b21c12+a02b22c21+a02b22c22')
         print('恰好等于从start到stop的所有路径的非规范化概率之和,即规范化因子Z(x)')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('11.3 条件随机场的概率计算问题')
+        print('条件随机场的概率计算问题是给条件随机场P(Y|X),输入序列x和输出序列y,计算条件概率P(Yi=yi|x),',
+            'P(Yi-1=yi-1,Yi=yi|x)以及相应的数学期望的问题,为了方便,像HMM,引进前向-后向向量,递归地计算',
+            '以上概率及期望值.这样的算法称为前向-后向算法')
+        print('11.3.1 前向-后向算法')
+        print('对每个指标i=0,1,...,n+1,定义前向向量ai(x):',
+            'a0(y|x)=1, y=start;  a0(y|x)=1, y=star0, 否则')
+        print('递推公式为ai^T(yi|x)=ai-1^T(yi-1|x)Mi(yi-1,yi|x), i=1,2,...,n+1')
+        print('又可以表示为ai^T(x)=ai-1^T(x)Mi(x)')
+        print('ai(yi|x)表示在位置i的标记是yi并且到位置i的前部分标记序列的非规范化概率,',
+            'yi可取的值有m个,所以ai(x)是m维列向量.')
+        print('同样,对每个指标i=0,1,...,n+1,定义后向向量bi(x):',
+            'bn+1(yn+1|x)=1, yn+1=stop; bn+1(yn+1|x)=0, 否则')
+        print('bi(yi|x)=Mi(yi,yi+1|x)bi-1(yi+1|x)')
+        print('又可表示为：bi(x)=Mi+1(x)bi+1(x)')
+        print('bi(yi|x)表示在位置i的标记为yi并且从i+1到n的后部分标记序列的非规范化概率.')
+        print('由前向-后向向量定义不难得到: Z(x)=an^T(x)·1=1^T·b1(x)',
+            '这里,1是元素均为1的m维列向量')
+        print('11.3.2 概率计算')
+        print('按照前向-后向向量的定义,很容易计算标记序列在位置i是标记yi的条件概率和在')
         print('')
         print('')
         print('')
