@@ -236,6 +236,28 @@ class Chapter11:
         print('同样,关于状态特征的参数更新方程可以写成:')
         print('Ep[sl]=∑P(x)P(y|x)∑sl(yi,x,i)exp(dk1+lT(x))=∑bl,yl')
         print('这里,bl,t是特征sl的期望值,dl=logyl,yl是多项式方程唯一的实根,也可以用牛顿法求得.')
+        print('11.4.2 拟牛顿法')
+        print('条件随机场模型学习还可以应用牛顿法或拟牛顿法.对于条件随机场模型',
+            'Pw(y|x)=exp(∑wifi(x,y))/∑exp(∑wifi(x,y))')
+        print('学习的优化目标函数是minf(w)=P(x)log∑exp(∑wifi(x,y))-∑P(x,y)∑fi(x,y),',
+            '其梯度函数是g(w)=∑P(x)Pw(y|x)f(x,y)-Ep(f)')
+        print('拟牛顿法的BSGS算法如下.')
+        print('算法11.2 (条件随机场模型学习的BFGS算法)')
+        print('输入：特征函数f1,f2,...,fn：经验分布P(X,Y)')
+        print('输出：最优参数值w:最优模型Pw(y|x)')
+        print('(1) 选定初始点w(0),取B0为正定对称矩阵,置k=0')
+        print('(2) 计算gk=g(w(k)).若gk=0,则停止计算;否则转(3)')
+        print('(3) 由Bkpk=-gk求出pk')
+        print('(4) 一维搜索:求lk使得f(w(k)+lkpk)=minf(w(k)+lpk)')
+        print('(5) 置w(k+1)=w(k)+lkpk')
+        print('(6) 计算gk+1=g(w(k+1)),若gk=0,则停止计算；否则,按下式求出Bk+1',
+            'Bk+1=Bk+ykyk^T/yk^Tdk-Bkdkdk^TBk/dk^TBkdk',
+            '其中,yk=gk+1-gk, dk=w(k+1)-w(k)')
+        print('(7) 置k=k+1,转(3)')
+        print('')
+        print('')
+        print('')
+        print('')
         print('')
         print('')
         print('')
