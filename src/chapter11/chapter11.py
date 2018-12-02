@@ -254,17 +254,27 @@ class Chapter11:
             'Bk+1=Bk+ykyk^T/yk^Tdk-Bkdkdk^TBk/dk^TBkdk',
             '其中,yk=gk+1-gk, dk=w(k+1)-w(k)')
         print('(7) 置k=k+1,转(3)')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('11.5 条件随机场的预测算法')
+        print('条件随机场的预测问题是给定条件随机场P(Y|X)和输入序列(观测序列)x,',
+            '求条件概率最大的输出序列(标记序列)y*,即对观测序列进行标注.条件随机场的预测算法是',
+            '著名的维特比算法.')
+        print('由式子可得:y*=argmaxPw(y|x)=argmaxexp(w·F(y,x))/Z(w)=',
+            'argmaxexp(w·F(y,x))=argmax(w·F(y,x))')
+        print('于是,条件随机场的预测问题成为求非规范化概率最大的最优路径问题max(w·F(y,x))')
+        print('这里,路径表示标记序列.其中,w=(w1,w2,...,wK)^T',
+            'F(y,x)=(f1(y,x),f2(y,x),...,fK(y,x)^T)',
+            'fk(y,x)=∑fk(yi-1,yi,x,i),k=1,2,...,K')
+        print('注意,这时只需计算非规范化概率,而不必计算概率,可以大大提高效率.为了求解最优路径,',
+            '将式写成如下形式:max∑w·Fi(yi-1,yi,x)')
+        print('其中,Fi(yi-1,yi,x)=(f1(yi-1,yi,x,i),f2(yi-1,yi,x,i),...,fK(yi-1,yi,x,i))^T',
+            '是局部特征向量.')
+        print('下面叙述维特比算法.首先求出位置1的各个标记j=1,2,...,m的非规范化概率:',
+            'd1(j)=w·F1(y0=start,y1-j,x),j=1,2,...,m')
+        print('一般地,由递推公式,求出到位置i的各个标记l=1,2,...,m的非规范化概率的最大值',
+            '同时记录非规范化概率最大值的路径',
+            'di(l)=max{di-1(j)+w·Fi(yi-1=j,yi=l,x)},l=1,2,...,m')
+        print('fi(l)=argmax{di-1(j)+w·Fi(yi-1=j,yi=l,x)},l=1,2,...,m')
+        print('直到i=n时终止.这时求得非规范化概率的最大值为：')
         print('')
         print('')
         print('')
