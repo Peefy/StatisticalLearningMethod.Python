@@ -22,6 +22,8 @@
 
 * [Chapter11 条件随机场](https://github.com/Peefy/StatisticalLearningMethod.Python/tree/master/src/chapter11)
 
+* [Chapter12 统计学习方法总结](https://github.com/Peefy/StatisticalLearningMethod.Python/tree/master/src/chapter12)
+
 ## Requirement
 
 * *Python3.5+ Sdk*
