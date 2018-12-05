@@ -133,37 +133,55 @@ class Appendix:
             '也满足拟牛顿条件式,而且是正定的.其中0<=a<=1.这样就得到了一类拟牛顿法,',
             '称为Broyden类算法')
         print('附录C 拉格朗日对偶性')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
-        print('')
+        print('在约束最优化问题中,常常利用拉格朗日对偶性(Lagrange duality)将原始问题转换为对偶问题,',
+            '通过解对偶问题而得到原始问题的解.该方法应用在许多统计学习方法中,例如,',
+            '最大熵模型与支持向量机.','这里要叙述拉格朗日对偶性的主要概念和结果.')
+        print('1.原始问题')
+        print('假设f(x),ci(x),hj(x)是定义在R^n上的连续可微函数.考虑约束最优化问题',
+            'minf(x) s.t. ci(x)<=0,i=1,2,...,k, hj(x)=0,j=1,2,...,l')
+        print('称此约束最优化问题为原始最优化问题或原始问题.')
+        print('首先,引进广义拉格朗日函数(generalized Lagrange function),',
+            '这里,x=(x(1),x(2),...,x(n))∈R^n,ai,bj是拉格朗日乘子,ai>=0.考虑x的函数:',
+            't(x)=maxL(x,a,b).这里,下标P表示原始问题')
+        print('假设给定某个x.如果x违反原始问题的约束条件,即存在某个i使得ci(w)或者存在某个j使得hj(w)!=0,那么就有,',
+            'tp(x)=max[f(x)+∑aici(x)+∑bjhj(x)]=+∞')
+        print('因为若某个i使约束ci(x)>0,则可令ai->+∞,若某个j使hj(x)!=0,',
+            '则可令bj使bjhj(x)->+∞,而将其余各ai,bj均取为0.')
+        print('相反地,如果x满足约束条件,则可得tp(x)=f(x).因此,')
+        print('tp(x)=f(x),x满足原始问题约束;  tp(x)=+∞, 其他.')
+        print('如果考虑极小化问题mintp(x)=minmaxL(x,a,b)')
+        print('它是与原始最优化问题等价的,即它们有相同的解.',
+            '问题minmaxL(x,a,b)称为广义拉格朗日函数的极小极大问题.',
+            '这样一来,就把原始问题表示为广义拉格朗日函数的极小极大问题.',
+            '为了方便,定义原始问题的最优值p*=mintp(x)称为原始问题的值')
+        print('2.对偶问题')
+        print('定义tD(a,b)=minL(x,a,b)')
+        print('再考虑极大化tD(a,b)=minL(x,a,b),即maxtD(a,b)=maxminL(x,a,b),',
+            '问题maxminL(x,a,b)称为广义拉格朗日函数的极大极小问题')
+        print('可以将广义拉格朗日函数的极大极小问题表示为约束最优化问题;',
+            'maxtD(a,b)=maxminL(x,a,b) s.t. ai>=0, i=1,2,...,k')
+        print('称为原始问题的对偶问题.定义对偶问题的最优值,',
+            'd*=maxtD(a,b)称为对偶问题的值d*=maxtD(a,b)称为对偶问题的值')
+        print('3.原始问题和对偶问题的关系')
+        print('定理C.1 若原始问题和对偶问题都有最优值,则',
+            'd*=maxminL(x,a,b)<=minmaxL(x,a,b)=p*')
+        print('推论C.1 设x*和a*,b*分别是原始问题和对偶问题的可行解,',
+            '则x*和a*,b*分别是原始问题和对偶问题的最优解.')
+        print('定理C.2 考虑原始问题和对偶问题.假设函数f(x)和ci(x)是凸函数,hj(x)是仿射函数;',
+            '并且假设不等式约束ci(x)是严格可行的,即存在x,对所有i有ci(x)<0,则存在x*,a*,b*,',
+            '使x*是原始问题的解,a*,b*是对偶问题的解,并且p*,d*,L(x*)')
+        print('定理C.3 对原始问题(C.1)-(C.3)和对偶问题,假设函数f(x)和ci(x)是凸函数,',
+            'hj(x)是仿射函数,并且不等式约束ci(x)是严格可行的,',
+            '则x*和a*,b*分别是原始问题和对偶问题的解的充分必要条件是x*,a*,b*满足下面的',
+            'Karush-Kuhn-Tucker(KKT)条件:')
+        print(' gradxL(x*,a*,b*)=0')
+        print(' gradaL(x*,a*,b*)=0')
+        print(' gradbL(x*,a*,b*)=0')
+        print(' ai*ci(x*)=0,i=1,2,...,k')
+        print(' ci(x*)<=0,i=1,2,...,k')
+        print(' ai*>=0,i=1,2,..,k')
+        print(' hj(x*)=0,j=1,2,...,l')
+        print('特别指出,KKT条件对偶互补条件.由此条件可知:若ai*>0,则ci(x*)=0')
     
 appendix = Appendix()
 
