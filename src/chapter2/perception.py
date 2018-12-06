@@ -48,6 +48,7 @@ class SKLearnPerception:
     def demo(self):
         from sklearn.datasets import make_classification
         from sklearn.linear_model import Perceptron
+        from sklearn import datasets
         # n_samples:生成样本的数量
         # n_features=2:生成样本的特征数，特征数=n_informative（） + n_redundant + n_repeated
         # n_informative：多信息特征的个数
