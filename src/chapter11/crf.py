@@ -1,13 +1,12 @@
 
-class SKlearnHMM:
+class SKlearnCRF:
     def demo(self):
         import numpy as np
-
         return self
 
 
 def main():
-    SKlearnHMM().demo()
+    SKlearnCRF().demo()
 
 
 if __name__ == '__main__':
