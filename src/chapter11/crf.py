@@ -8,7 +8,6 @@ class SKlearnCRF:
 def main():
     SKlearnCRF().demo()
 
-
 if __name__ == '__main__':
     main()
 
